@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+//TODO: Check for all test's value
+
 class RadioTest {
     @Test
     void shouldInvalidMaxSetCurrentVolume() {
@@ -53,7 +55,7 @@ class RadioTest {
 
     @Test
     void shouldSetCurrentStation() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio(11);
         int expected = 5;
         // Установить станцию 5
         radio.setCurrentStation(expected);
@@ -76,7 +78,7 @@ class RadioTest {
         Radio radio = new Radio();
         int expected = radio.getCurrentStation();
         // Установить станцию больше максимальной
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(11);
         // Проверить, что текущая станция не изменилась
         assertEquals(expected, radio.getCurrentStation());
     }
