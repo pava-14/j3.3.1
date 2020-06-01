@@ -11,7 +11,7 @@ class RadioTest {
         // Запомнить текущую громкость
         int expected = radio.getCurrentVolume();
         // Установить значение громкости больше максимальной
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         // Проверить, что текущая громкость не изменилась
         assertEquals(expected, radio.getCurrentVolume());
     }
@@ -31,7 +31,7 @@ class RadioTest {
     void shouldIncreaseCurrentVolume() {
         Radio radio = new Radio();
         // Установить текущую громкость
-        radio.setCurrentVolume(9);
+        radio.setCurrentVolume(99);
         // Нажимать кнопку увеличения громкости 2 раза
         radio.increaseCurrentVolume();
         radio.increaseCurrentVolume();
@@ -53,7 +53,7 @@ class RadioTest {
 
     @Test
     void shouldSetCurrentStation() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         int expected = 5;
         // Установить станцию 5
         radio.setCurrentStation(expected);
