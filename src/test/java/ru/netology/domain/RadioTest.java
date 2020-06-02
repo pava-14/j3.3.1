@@ -79,6 +79,7 @@ class RadioTest {
 
     @Test
     void shouldInvalidMaxSetCurrentStation() {
+        new Radio();
         Radio radio = new Radio(5, 50, 11);
         int expected = 5;
         // Установить станцию больше максимальной
