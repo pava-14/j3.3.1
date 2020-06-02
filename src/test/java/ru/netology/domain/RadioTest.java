@@ -59,7 +59,7 @@ class RadioTest {
 
     @Test
     void shouldSetCurrentStation() {
-        Radio radio = new Radio(11);
+        Radio radio = new Radio(1, 50, 11);
         int expected = 5;
         // Установить станцию 5
         radio.setCurrentStation(expected);
@@ -69,10 +69,8 @@ class RadioTest {
 
     @Test
     void shouldInvalidMinSetCurrentStation() {
-        Radio radio = new Radio(11);
-        // Установить станцию 5
+        Radio radio = new Radio(5, 50, 11);
         int expected = 5;
-        radio.setCurrentStation(expected);
         // Установить станцию меньше минимальной
         radio.setCurrentStation(-1);
         // Проверить, что текущая станция не изменилась
@@ -81,10 +79,8 @@ class RadioTest {
 
     @Test
     void shouldInvalidMaxSetCurrentStation() {
-        Radio radio = new Radio(11);
-        // Установить станцию 5
+        Radio radio = new Radio(5, 50, 11);
         int expected = 5;
-        radio.setCurrentStation(expected);
         // Установить станцию больше максимальной
         radio.setCurrentStation(12);
         // Проверить, что текущая станция не изменилась
@@ -93,9 +89,7 @@ class RadioTest {
 
     @Test
     void shouldNextRadioStation() {
-        Radio radio = new Radio(11);
-        // Установить станцию 10
-        radio.setCurrentStation(10);
+        Radio radio = new Radio(10, 50, 11);
         // Нажать 2 раза next
         radio.nextStation();
         radio.nextStation();
@@ -107,9 +101,7 @@ class RadioTest {
 
     @Test
     void shouldPrevRadioStation() {
-        Radio radio = new Radio(11);
-        // Установить станцию 1
-        radio.setCurrentStation(1);
+        Radio radio = new Radio(1, 50, 11);
         // Нажать 2 раза prev
         radio.prevStation();
         radio.prevStation();
