@@ -16,23 +16,18 @@ public class Radio {
     }
 
     public int getMinStation() { return minStation; }
-
     public int getMaxStation() {
         return maxStation;
     }
-
     public int getMinVolume() {
         return minVolume;
     }
-
     public int getMaxVolume() {
         return maxVolume;
     }
-
     public int getCurrentStation() {
         return currentStation;
     }
-
     public int getCurrentVolume() {
         return currentVolume;
     }

@@ -10,6 +10,8 @@ class RadioTest {
     @Test
     void shouldInvalidMaxSetCurrentVolume() {
         Radio radio = new Radio();
+        //Установить громкость
+        radio.setCurrentVolume(50);
         // Запомнить текущую громкость
         int expected = radio.getCurrentVolume();
         // Установить значение громкости больше максимальной
@@ -21,6 +23,8 @@ class RadioTest {
     @Test
     void shouldInvalidMinSetCurrentVolume() {
         Radio radio = new Radio();
+        //Установить громкость
+        radio.setCurrentVolume(50);
         // Запомнить текущую громкость
         int expected = radio.getCurrentVolume();
         // Установить значение громкости больше максимальной
@@ -65,8 +69,10 @@ class RadioTest {
 
     @Test
     void shouldInvalidMinSetCurrentStation() {
-        Radio radio = new Radio();
-        int expected = radio.getCurrentStation();
+        Radio radio = new Radio(11);
+        // Установить станцию 5
+        int expected = 5;
+        radio.setCurrentStation(expected);
         // Установить станцию меньше минимальной
         radio.setCurrentStation(-1);
         // Проверить, что текущая станция не изменилась
@@ -75,19 +81,21 @@ class RadioTest {
 
     @Test
     void shouldInvalidMaxSetCurrentStation() {
-        Radio radio = new Radio();
-        int expected = radio.getCurrentStation();
+        Radio radio = new Radio(11);
+        // Установить станцию 5
+        int expected = 5;
+        radio.setCurrentStation(expected);
         // Установить станцию больше максимальной
-        radio.setCurrentStation(11);
+        radio.setCurrentStation(12);
         // Проверить, что текущая станция не изменилась
         assertEquals(expected, radio.getCurrentStation());
     }
 
     @Test
     void shouldNextRadioStation() {
-        Radio radio = new Radio();
-        // Установить станцию 8
-        radio.setCurrentStation(8);
+        Radio radio = new Radio(11);
+        // Установить станцию 10
+        radio.setCurrentStation(10);
         // Нажать 2 раза next
         radio.nextStation();
         radio.nextStation();
@@ -99,14 +107,14 @@ class RadioTest {
 
     @Test
     void shouldPrevRadioStation() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(11);
         // Установить станцию 1
         radio.setCurrentStation(1);
         // Нажать 2 раза prev
         radio.prevStation();
         radio.prevStation();
         // Ожидаемый результат
-        int expected = 9;
+        int expected = 11;
         // Проверить, что станция 9 теперь текущая
         assertEquals(expected, radio.getCurrentStation());
     }
