@@ -11,6 +11,16 @@ class RadioTest {
     private int maxStation = 11;
 
     @Test
+    void shouldSetCurrentVolume() {
+        Radio radio = new Radio(1, 50, minStation, maxStation, minVolume, maxVolume);
+        int expected = 60;
+        // Установить громкость 60
+        radio.setCurrentVolume(expected);
+        // Проверить, что станция 5 теперь текущая
+        assertEquals(expected, radio.getCurrentVolume());
+    }
+
+    @Test
     void shouldInvalidMaxSetCurrentVolume() {
         // Текущая громкость
         int expected = 50;
