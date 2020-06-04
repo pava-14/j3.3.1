@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 public class Radio {
     private int currentStation;
     private int currentVolume;
-    private final int minStation = 0;
     private int maxStation = 10;
-    private final int minVolume = 0;
-    private final int maxVolume = 100;
+    private int minStation = 0;
+    private int minVolume = 0;
+    private int maxVolume = 100;
 
     public void setCurrentStation(int currentStation) {
         if (currentStation > maxStation) {
