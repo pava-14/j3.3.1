@@ -1,19 +1,26 @@
 package ru.netology.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 public class Radio {
     private int currentStation;
     private int currentVolume;
-    private final int minStation = 0;
+    private int minStation = 0;
     private int maxStation = 10;
-    private final int minVolume = 0;
-    private final int maxVolume = 100;
+    private int minVolume = 0;
+    private int maxVolume = 100;
+
+    public Radio(int currentStation, int currentVolume, int minStation, int maxStation, int minVolume, int maxVolume) {
+        this.currentStation = currentStation;
+        this.currentVolume = currentVolume;
+        this.minStation = minStation;
+        this.maxStation = maxStation;
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+    }
+
+    public Radio(int currentStation, int currentVolume) {
+        this.currentStation = currentStation;
+        this.currentVolume = currentVolume;
+    }
 
     public void setCurrentStation(int currentStation) {
         if (currentStation > maxStation) {
@@ -57,5 +64,45 @@ public class Radio {
             return;
         }
         currentStation--;
+    }
+
+    public int getMinStation() {
+        return minStation;
+    }
+
+    public void setMinStation(int minStation) {
+        this.minStation = minStation;
+    }
+
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public void setMaxStation(int maxStation) {
+        this.maxStation = maxStation;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
+    public void setMinVolume(int minVolume) {
+        this.minVolume = minVolume;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public void setMaxVolume(int maxVolume) {
+        this.maxVolume = maxVolume;
+    }
+
+    public int getCurrentStation() {
+        return currentStation;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 }
